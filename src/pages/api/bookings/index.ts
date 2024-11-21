@@ -31,7 +31,7 @@ export default async function handler(
         status: 'pending',
         paymentStatus: 'pending'
       }
-    })
+    }) 
 
     return res.status(200).json({ success: true, data: booking })
   } catch (error) {
