@@ -2,6 +2,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Hero() {
   return (
@@ -46,16 +47,18 @@ export default function Hero() {
             全港最靚的藝術團體
           </motion.p>
           
-          <motion.button
-            whileHover={{ scale: 1.05, boxShadow: '0 20px 30px -10px rgba(41, 187, 137, 0.3)' }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-[#29BB89] text-white px-12 py-4 rounded-full 
-                     text-lg font-medium
-                     hover:bg-[#3ED9A7] transition-all duration-300 
-                     shadow-xl shadow-[#29BB89]/20"
-          >
-            立即預約
-          </motion.button>
+          <Link href="/booking">
+  <motion.button
+    whileHover={{ scale: 1.05, boxShadow: '0 20px 30px -10px rgba(41, 187, 137, 0.3)' }}
+    whileTap={{ scale: 0.95 }}
+    className="bg-[#29BB89] text-white px-12 py-4 rounded-full 
+               text-lg font-medium
+               hover:bg-[#3ED9A7] transition-all duration-300 
+               shadow-xl shadow-[#29BB89]/20"
+  >
+    立即預約
+  </motion.button>
+</Link>
         </motion.div>
       </div>
 
