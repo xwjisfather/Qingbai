@@ -1,0 +1,20 @@
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义全局样式 */
+:root {
+  --primary-color: #29BB89;
+  --secondary-color: #F0F0F0;
+}
+
+body {
+  @apply bg-gray-50;
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+}
