@@ -103,7 +103,7 @@ export default function About() {
               viewport={{ once: true }}
               className="text-xl text-gray-600 italic"
             >
-              "舞動青春，綻放藝術之美"
+              &ldquo;舞動青春，綻放藝術之美&rdquo;
             </motion.p>
           </div>
         </div>
