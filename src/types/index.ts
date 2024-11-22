@@ -7,7 +7,7 @@ export interface NavItem {
 export interface Feature {
   title: string;
   description: string;
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<SVGProps<SVGSVGElement>>;
 }
 
 export interface Course {
