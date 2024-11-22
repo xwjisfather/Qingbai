@@ -17,7 +17,6 @@ interface BookingFormData {
 }
 
 export default function Page() {
-  const router = useRouter()
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
   const [selectedTime, setSelectedTime] = useState<string | null>(null)
   const [formData, setFormData] = useState<BookingFormData>({
