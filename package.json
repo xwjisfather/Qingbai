@@ -32,5 +32,6 @@
   }
   "scripts": {
     "build": "prisma generate && next build"
+    "postinstall": "prisma generate"
   }
 }
