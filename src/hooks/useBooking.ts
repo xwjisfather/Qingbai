@@ -1,7 +1,7 @@
 // src/hooks/useBooking.ts
 import { useMutation, useQuery } from 'react-query';
 import axios from 'axios';
-import { CreateBookingInput, Booking } from '@/types/booking';
+import { CreateBookingInput } from '@/types/booking';
 
 export function useCreateBooking() {
   return useMutation(async (data: CreateBookingInput) => {
