@@ -1,6 +1,6 @@
 // src/pages/api/bookings/index.ts
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from '.prisma/client'
 
 const prisma = new PrismaClient()
 
@@ -18,7 +18,10 @@ export default async function handler(
       name,
       email,
       phone,
-      notes
+      notes,
+      date,      // 新增字段
+      time,      // 新增字段
+      courseType // 新增字段
     } = req.body
 
     const booking = await prisma.booking.create({
@@ -28,6 +31,9 @@ export default async function handler(
         email,
         phone,
         notes,
+        date,      // 新增字段
+        time,      // 新增字段
+        courseType, // 新增字段
         status: 'pending',
         paymentStatus: 'pending'
       }
