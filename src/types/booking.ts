@@ -5,6 +5,9 @@ export interface CreateBookingInput {
   email: string;
   phone: string;
   notes?: string;
+  date: string;
+  time: string;
+  courseType: string;
 }
   
   export interface Booking {
