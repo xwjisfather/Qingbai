@@ -1,0 +1,7 @@
+<svg width="400" height="80" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 40C20 20 40 40 60 40C80 40 100 20 120 40C140 60 160 40 180 40C200 40 220 60 240 40C260 20 280 40 300 40C320 40 340 20 360 40C380 60 400 40 420 40" 
+        fill="none" 
+        stroke="#29BB89" 
+        stroke-width="2"
+        opacity="0.5"/>
+</svg>
