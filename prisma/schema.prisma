@@ -78,7 +78,10 @@ model Booking {
   name             String // 改用 name 而不是 customerName
   email            String // 改用 email 而不是 customerEmail
   phone            String // 改用 phone 而不是 customerPhone
+  date             String
+  time             String
   notes            String?
+  courseType       String
   createdAt        DateTime        @default(now())
   updatedAt        DateTime        @updatedAt
   User             User?           @relation(fields: [userId], references: [id])
