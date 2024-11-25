@@ -67,7 +67,7 @@ export default function Page() {
 
   // 时间段选项
   const timeSlots = [
-    "10:00", "11:00", "12:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00"
+    "10:00", "11:00", "12:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00"
   ]
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -89,12 +89,21 @@ export default function Page() {
     }
   
     try {
+      const formattedDate = selectedDate.toLocaleDateString('zh-CN', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+      }).replace(/\//g, '-')
+
       const bookingData: CreateBookingInput = {
         scheduleId: 'schedule-1', // 临时ID，后续需要根据实际选择的课程获取
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
-        notes: formData.notes || undefined
+        notes: formData.notes || undefined,
+        date: formattedDate,
+        time: selectedTime,
+        courseType: formData.courseType
       }
   
       const response = await fetch('/api/bookings', {
