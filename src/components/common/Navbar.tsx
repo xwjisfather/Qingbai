@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="relative bg-white/80 backdrop-blur-sm shadow-lg">
+    <nav className="relative bg-white/80 backdrop-blur-sm shadow-lg z-50">
       {/* 背景装饰 */}
       <div className="absolute inset-0 bg-snake-pattern opacity-5" />
       <div className="absolute inset-0 bg-chinese-texture opacity-10" />
