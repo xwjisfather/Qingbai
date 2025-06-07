@@ -87,7 +87,7 @@ export default function CompanyPage() {
             <div className="relative">
               <div className="absolute -left-4 -top-2 text-6xl text-[#29BB89]/20 font-serif">&ldquo;</div>
               <p className="relative pl-8">
-                &ldquo;青白&rdquo;全稱名叫 <b className="text-primary bg-gradient-to-r from-[#29BB89]/5 to-[#3ED9A7]/5 px-2 py-1 rounded">&ldquo;青白藝術文化有限公司&rdquo;</b>，由兩個來自香港大學、從事各行各業的畢業生於2024年創辦。公司現有核心成員具有二十餘人，年齡跨越二十至四十歲，現皆常駐香港。我們始終對藝術文化的熱愛與激情，集傳承、創新、公益及社交屬性為一體，以中華文化為紐帶推動社區共融，通過多樣化及普惠性的特色活動，激發市民參與文化藝術的傳承與創新，從而最終組建一個多元共融的大家庭。
+                &ldquo;青白&rdquo;全稱名叫 <b className="text-primary bg-gradient-to-r from-[#29BB89]/5 to-[#3ED9A7]/5 px-2 py-1 rounded">&ldquo;青白藝術文化有限公司&rdquo;</b>，由兩個熱愛傳統文化與藝術的香港大學畢業生於2024年創辦。有核心成員有二十餘人，年齡跨越二十至四十歲，從事各行各業，現皆常駐香港。我們始終對藝術文化的熱愛與激情，集傳承、創新、公益及社交屬性為一體，以中華文化為紐帶推動社區共融，通過多樣化及普惠性的特色活動，激發市民參與文化藝術的傳承與創新，從而最終組建一個多元共融的大家庭。
               </p>
               <div className="absolute -right-4 -bottom-2 text-6xl text-[#29BB89]/20 font-serif rotate-180">&rdquo;</div>
             </div>
