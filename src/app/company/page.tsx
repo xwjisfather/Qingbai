@@ -85,11 +85,11 @@ export default function CompanyPage() {
             
             {/* 引号装饰 */}
             <div className="relative">
-              <div className="absolute -left-4 -top-2 text-6xl text-[#29BB89]/20 font-serif">&ldquo;</div>
-              <p className="relative pl-8 text-lg text-gray-600 leading-relaxed">
-                &ldquo;青白&rdquo;二字取自《诗经·小雅·青蝇》中的&ldquo;青蝇之飞，集于樊篱&rdquo;，寓意着艺术创作如同青蝇般轻盈灵动，在艺术的樊篱中自由翱翔。
+              <div className="absolute -left-4 -top-2 text-6xl text-[#29BB89]/20 font-serif">"</div>
+              <p className="relative pl-8">
+                「青白」全稱名叫 <b className="text-primary bg-gradient-to-r from-[#29BB89]/5 to-[#3ED9A7]/5 px-2 py-1 rounded">「青白藝術文化有限公司」</b>，由兩個來自香港大學、從事各行各業的畢業生於2024年創辦。公司現有核心成員具有二十餘人，年齡跨越二十至四十歲，現皆常駐香港。我們始終對藝術文化的熱愛與激情，集傳承、創新、公益及社交屬性為一體，以中華文化為紐帶推動社區共融，通過多樣化及普惠性的特色活動，激發市民參與文化藝術的傳承與創新，從而最終組建一個多元共融的大家庭。
               </p>
-              <div className="absolute -right-4 -bottom-2 text-6xl text-[#29BB89]/20 font-serif rotate-180">&rdquo;</div>
+              <div className="absolute -right-4 -bottom-2 text-6xl text-[#29BB89]/20 font-serif rotate-180">"</div>
             </div>
           </div>
           
@@ -188,12 +188,11 @@ export default function CompanyPage() {
               
               {/* 节点容器 */}
               <div className="relative w-full h-full px-20">
-                {timeline.map((item) => {
-                  const month = parseInt(item.date.split('.')[1]);
-                  const isTop = month % 2 === 0;
+                {timeline.map((item, idx) => {
+                  const isTop = idx % 2 === 0;
                   const totalNodes = timeline.length;
                   const nodeSpacing = 100 / (totalNodes - 1);
-                  const leftPosition = (month - 1) * nodeSpacing;
+                  const leftPosition = idx * nodeSpacing;
                   
                   return (
                     <div 
@@ -394,7 +393,7 @@ export default function CompanyPage() {
               className="relative"
             >
               <span className="absolute -left-2 top-0 text-4xl text-[#29BB89]/10 font-serif">&ldquo;</span>
-              「青白」二字，源於兩位創始人最初在香港合作的起點——一場改編自經典傳說《白蛇傳》的雙人舞。
+              「青白」二字取自《诗经·小雅·青蝇》中的&ldquo;青蝇之飞，不过数步；青蝇之止，不过数尺。&rdquo;
               <span className="text-primary font-semibold">青蛇與白蛇</span>，一動一靜，一熾烈一沉穩，
               正如兩位創始人截然不同的性格，卻因對舞蹈的熱忱與信念，成就了這段藝術之緣。
               她們以肢體詮釋傳統故事中的「人與妖」之界，也讓「青白」成為跨越差異、包容共生的象徵。
