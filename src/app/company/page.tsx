@@ -393,7 +393,7 @@ export default function CompanyPage() {
               className="relative"
             >
               <span className="absolute -left-2 top-0 text-4xl text-[#29BB89]/10 font-serif">&ldquo;</span>
-              「青白」二字取自《诗经·小雅·青蝇》中的&ldquo;青蝇之飞，不过数步；青蝇之止，不过数尺。&rdquo;
+              &ldquo;青白&rdquo;二字取自《诗经·小雅·青蝇》中的&ldquo;青蝇之飞，不过数步；青蝇之止，不过数尺。&rdquo;
               <span className="text-primary font-semibold">青蛇與白蛇</span>，一動一靜，一熾烈一沉穩，
               正如兩位創始人截然不同的性格，卻因對舞蹈的熱忱與信念，成就了這段藝術之緣。
               她們以肢體詮釋傳統故事中的「人與妖」之界，也讓「青白」成為跨越差異、包容共生的象徵。
