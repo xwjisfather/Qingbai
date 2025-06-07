@@ -1,7 +1,6 @@
 // src/components/common/Footer.tsx
 'use client'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import { useState } from 'react'
 
 const socialLinks = [

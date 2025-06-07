@@ -134,7 +134,14 @@ export default function BusinessPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={() => setPreviewImg(null)}>
           <div className="relative max-w-3xl w-full flex flex-col items-center" onClick={e => e.stopPropagation()}>
             <button className="absolute top-2 right-2 text-white/80 hover:text-primary text-3xl z-10" onClick={() => setPreviewImg(null)}>&times;</button>
-            <img src={previewImg} alt="预览大图" className="max-h-[80vh] w-auto rounded-2xl shadow-2xl border-4 border-white" />
+            <div className="relative w-full h-64 overflow-hidden rounded-lg">
+              <Image
+                src={previewImg}
+                alt="Preview"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       )}
@@ -230,7 +237,14 @@ export default function BusinessPage() {
                         <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-full hover:shadow-2xl transition-all duration-300">
                           {/* 实际图片展示 */}
                           <div className="relative h-56 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden cursor-pointer" onClick={() => setPreviewImg(activity.image)}>
-                            <img src={activity.image} alt={activity.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-200 group-hover:scale-105" />
+                            <div className="relative w-full h-full">
+                              <Image
+                                src={activity.image}
+                                alt={activity.title}
+                                fill
+                                className="object-cover"
+                              />
+                            </div>
                             {/* 日期标签 */}
                             <div className={`absolute top-4 right-4 px-3 py-1 bg-gradient-to-r ${category.color} text-white text-sm font-medium rounded-full shadow-lg`}>
                               {activity.date}
