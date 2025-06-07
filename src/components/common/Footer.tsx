@@ -2,6 +2,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useState } from 'react'
 
 const socialLinks = [
   {
@@ -14,12 +15,10 @@ const socialLinks = [
     )
   },
   {
-    name: 'Facebook',
-    href: 'https://facebook.com',
+    name: 'Xiaohongshu',
+    href: '#',
     icon: (
-      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
-      </svg>
+      <img src="/qr-xiaohongshu.png" alt="小红书二维码" className="w-7 h-7 rounded" />
     )
   },
   {
@@ -27,13 +26,16 @@ const socialLinks = [
     href: '#',
     icon: (
       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098c.931.255 1.96.396 3.038.396h.305a7.254 7.254 0 0 1-.181-1.6c0-4.053 3.89-7.341 8.69-7.341.326 0 .646.019.962.048C17.916 4.289 13.69 2.188 8.691 2.188zm1.493 4.498a1.052 1.052 0 1 1 0 2.104 1.052 1.052 0 0 1 0-2.104zm5.062 0a1.052 1.052 0 1 1 .002 2.104 1.052 1.052 0 0 1-.002-2.104zm-1.293 9.545c-4.801 0-8.692 3.288-8.692 7.341 0 2.213 1.17 4.204 3.002 5.551a.59.59 0 0 1 .213.664l-.39 1.48c-.019.071-.048.141-.048.214 0 .163.13.294.29.294a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098c.93.255 1.96.397 3.038.397 4.801 0 8.692-3.289 8.692-7.341 0-4.053-3.89-7.341-8.692-7.341zm-3.77 4.498a1.052 1.052 0 1 1 0 2.104 1.052 1.052 0 0 1 0-2.104zm5.063 0a1.052 1.052 0 1 1 0 2.104 1.052 1.052 0 0 1 0-2.104z"/>
+        <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098c.931.255 1.96.396 3.038.396h.305a7.254 7.254 0 0 1-.181-1.6c0-4.053 3.89-7.341 8.69-7.341.326 0 .646.019.962.048C17.916 4.289 13.69 2.188 8.691 2.188zm1.493 4.498a1.052 1.052 0 1 1 0 2.104 1.052 1.052 0 0 1 0-2.104zm5.062 0a1.052 1.052 0 1 1 .002 2.104 1.052 1.052 0 0 1-.002-2.104zm-1.293 9.545c-4.801 0-8.692 3.288-8.692 7.341 0 2.213 1.17 4.204 3.002 5.551a.59.59 0 0 1 .213.664l-.39 1.48c-.019.071-.048.141-.048.214 0 .163.13.294.294.294a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098c.93.255 1.96.397 3.038.397 4.801 0 8.692-3.289 8.692-7.341 0-4.053-3.89-7.341-8.692-7.341zm-3.77 4.498a1.052 1.052 0 1 1 0 2.104 1.052 1.052 0 0 1 0-2.104zm5.063 0a1.052 1.052 0 1 1 0 2.104 1.052 1.052 0 0 1 0-2.104z"/>
       </svg>
     )
   }
 ]
 
 export default function Footer() {
+  const [showIGQR, setShowIGQR] = useState(false)
+  const [showXHSQR, setShowXHSQR] = useState(false)
+  const [showWXQR, setShowWXQR] = useState(false)
   return (
     <footer className="relative overflow-hidden">
       {/* 背景装饰 */}
@@ -42,6 +44,33 @@ export default function Footer() {
       <div className="absolute -top-40 -left-40 w-80 h-80 bg-[#29BB89]/5 rounded-full blur-3xl" />
       <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-[#3ED9A7]/5 rounded-full blur-3xl" />
       
+      {/* IG二维码弹窗 */}
+      {showIGQR && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40" onClick={() => setShowIGQR(false)}>
+          <div className="bg-white rounded-2xl shadow-2xl p-8 relative max-w-xs w-full flex flex-col items-center" onClick={e => e.stopPropagation()}>
+            <button className="absolute top-2 right-2 text-gray-400 hover:text-primary text-2xl" onClick={() => setShowIGQR(false)}>&times;</button>
+            <img src="/images/IG.png" alt="Instagram二维码" className="w-56 h-56 rounded mb-4" />
+          </div>
+        </div>
+      )}
+      {/* 小红书二维码弹窗 */}
+      {showXHSQR && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40" onClick={() => setShowXHSQR(false)}>
+          <div className="bg-white rounded-2xl shadow-2xl p-8 relative max-w-xs w-full flex flex-col items-center" onClick={e => e.stopPropagation()}>
+            <button className="absolute top-2 right-2 text-gray-400 hover:text-primary text-2xl" onClick={() => setShowXHSQR(false)}>&times;</button>
+            <img src="/images/小红书.png" alt="小红书二维码" className="w-56 h-56 rounded mb-4" />
+          </div>
+        </div>
+      )}
+      {/* 微信二维码弹窗 */}
+      {showWXQR && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40" onClick={() => setShowWXQR(false)}>
+          <div className="bg-white rounded-2xl shadow-2xl p-8 relative max-w-xs w-full flex flex-col items-center" onClick={e => e.stopPropagation()}>
+            <button className="absolute top-2 right-2 text-gray-400 hover:text-primary text-2xl" onClick={() => setShowWXQR(false)}>&times;</button>
+            <img src="/images/微信.jpg" alt="微信二维码" className="w-56 h-56 rounded mb-4" />
+          </div>
+        </div>
+      )}
       <div className="max-w-7xl mx-auto px-4 py-16 relative">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
           {/* Logo部分 */}
@@ -75,20 +104,20 @@ export default function Footer() {
                 <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                 </svg>
-                <span>+852 XXXX XXXX</span>
+                <span>+852 9513 1120</span>
               </li>
               <li className="flex items-center space-x-3 hover:text-primary transition-colors">
                 <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                 </svg>
-                <span>info@qingbai.com</span>
+                <span>qingbai122@outlook.com</span>
               </li>
               <li className="flex items-center space-x-3 hover:text-primary transition-colors">
                 <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                 </svg>
-                <span>香港XX區XX街XX號</span>
+                <span>7F, No.345-351, Hennessy Road, Wanchai, Hong Kong</span>
               </li>
             </ul>
           </motion.div>
@@ -103,7 +132,53 @@ export default function Footer() {
           >
             <h3 className="text-xl font-bold text-gray-800">關注我們</h3>
             <div className="flex space-x-4">
-              {socialLinks.map((item) => (
+              {/* Instagram按钮自定义弹窗，青白主题icon */}
+              <button
+                className="p-2 rounded-full hover:bg-primary/10 transform hover:-translate-y-1 transition-all duration-300"
+                onClick={() => setShowIGQR(true)}
+                aria-label="Instagram二维码"
+              >
+                {/* 青白主题圆形背景+白色Instagram图标 */}
+                <span className="inline-block w-6 h-6 rounded-full bg-gradient-to-br from-[#29BB89] to-[#3ED9A7] flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4">
+                    <rect width="24" height="24" rx="6" fill="none" />
+                    <path d="M12 7.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zm0 7.4a2.9 2.9 0 1 1 0-5.8 2.9 2.9 0 0 1 0 5.8zm5.2-7.6a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0z" fill="#fff" />
+                    <rect x="5" y="5" width="14" height="14" rx="5" stroke="#fff" strokeWidth="1.5" fill="none" />
+                  </svg>
+                </span>
+              </button>
+              {/* 小红书按钮自定义弹窗，青白主题icon */}
+              <button
+                className="p-2 rounded-full hover:bg-primary/10 transform hover:-translate-y-1 transition-all duration-300"
+                onClick={() => setShowXHSQR(true)}
+                aria-label="小红书二维码"
+              >
+                <span className="inline-block w-6 h-6 rounded-full bg-gradient-to-br from-[#29BB89] to-[#3ED9A7] flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4">
+                    <rect width="24" height="24" rx="6" fill="none" />
+                    <text x="12" y="17" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#fff" fontFamily="Arial, Helvetica, sans-serif">小红书</text>
+                  </svg>
+                </span>
+              </button>
+              {/* 微信按钮自定义弹窗，青白主题icon */}
+              <button
+                className="p-2 rounded-full hover:bg-primary/10 transform hover:-translate-y-1 transition-all duration-300"
+                onClick={() => setShowWXQR(true)}
+                aria-label="微信二维码"
+              >
+                <span className="inline-block w-6 h-6 rounded-full bg-gradient-to-br from-[#29BB89] to-[#3ED9A7] flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4">
+                    <circle cx="9" cy="15" r="5" fill="#fff" />
+                    <circle cx="15" cy="10" r="6" fill="#fff" />
+                    <circle cx="8" cy="15" r="0.8" fill="#29BB89" />
+                    <circle cx="11" cy="15" r="0.8" fill="#29BB89" />
+                    <circle cx="13.5" cy="10" r="0.8" fill="#29BB89" />
+                    <circle cx="17" cy="10" r="0.8" fill="#29BB89" />
+                  </svg>
+                </span>
+              </button>
+              {/* 其余社交媒体 */}
+              {socialLinks.filter(item => item.name !== 'Instagram' && item.name !== 'Xiaohongshu' && item.name !== 'WeChat').map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
@@ -124,16 +199,8 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-600 text-sm">
-              © 2024 青白藝術工作室. All rights reserved.
+              © 2025 青白藝術工作室. All rights reserved.
             </p>
-            <div className="flex space-x-6 text-sm text-gray-600">
-              <Link href="/privacy" className="hover:text-primary transition-colors">
-                隱私政策
-              </Link>
-              <Link href="/terms" className="hover:text-primary transition-colors">
-                服務條款
-              </Link>
-            </div>
           </div>
         </div>
       </div>

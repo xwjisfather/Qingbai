@@ -36,8 +36,9 @@ export default function Navbar() {
           {/* 导航链接 */}
           <div className="hidden md:flex items-center space-x-12">
             {[
-              { href: '/about', label: '關於我們' },
-              { href: '/booking', label: '預約課程' }
+              { href: '/company', label: '公司簡介' },
+              { href: '/business', label: '過往業務' },
+              { href: '/future', label: '未來展望' }
             ].map((link) => (
               <Link
                 key={link.href}
@@ -83,8 +84,9 @@ export default function Navbar() {
           >
             <div className="px-4 py-6 space-y-4">
               {[
-                { href: '/about', label: '關於我們' },
-                { href: '/booking', label: '預約課程' }
+                { href: '/company', label: '公司簡介' },
+                { href: '/business', label: '過往業務' },
+                { href: '/future', label: '未來展望' }
               ].map((link) => (
                 <Link
                   key={link.href}
