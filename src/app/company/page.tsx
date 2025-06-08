@@ -87,7 +87,7 @@ export default function CompanyPage() {
             <div className="relative">
               <div className="absolute -left-4 -top-2 text-6xl text-[#29BB89]/20 font-serif">&ldquo;</div>
               <p className="relative pl-8">
-                &ldquo;青白&rdquo;全稱名叫 <b className="text-primary bg-gradient-to-r from-[#29BB89]/5 to-[#3ED9A7]/5 px-2 py-1 rounded">&ldquo;青白藝術文化有限公司&rdquo;</b>，由兩個熱愛傳統文化與藝術的香港大學畢業生於2024年創辦。有核心成員有二十餘人，年齡跨越二十至四十歲，從事各行各業，現皆常駐香港。我們始終對藝術文化的熱愛與激情，集傳承、創新、公益及社交屬性為一體，以中華文化為紐帶推動社區共融，通過多樣化及普惠性的特色活動，激發市民參與文化藝術的傳承與創新，從而最終組建一個多元共融的大家庭。
+                &ldquo;青白&rdquo;全稱名叫 <b className="text-primary bg-gradient-to-r from-[#29BB89]/5 to-[#3ED9A7]/5 px-2 py-1 rounded">&ldquo;青白藝術文化有限公司&rdquo;</b>，由兩個<span className="text-[#29BB89] font-bold bg-gradient-to-r from-[#e6faf4] to-[#3ED9A7]/10 px-1 rounded">熱愛傳統文化與藝術</span>的香港大學畢業生於2024年創辦。有核心成員有二十餘人，年齡跨越二十至四十歲，從事各行各業，現皆常駐香港。我們始終對藝術文化的<span className="text-[#29BB89] font-bold bg-gradient-to-r from-[#e6faf4] to-[#3ED9A7]/10 px-1 rounded">熱愛與激情</span>，集<span className="text-[#29BB89] font-bold bg-gradient-to-r from-[#e6faf4] to-[#3ED9A7]/10 px-1 rounded">傳承、創新、公益及社交屬性</span>為一體，以中華文化為紐帶推動社區共融，通過多樣化及普惠性的特色活動，激發市民參與文化藝術的傳承與創新，從而最終組建一個多元共融的大家庭。
               </p>
               <div className="absolute -right-4 -bottom-2 text-6xl text-[#29BB89]/20 font-serif rotate-180">&rdquo;</div>
             </div>
@@ -162,20 +162,20 @@ export default function CompanyPage() {
         </section>
 
         {/* 分割线 */}
-        <div className="w-full h-1 bg-gradient-to-r from-[#29BB89]/10 via-[#3ED9A7]/30 to-[#29BB89]/10 rounded-full my-8" />
+        <div className="w-full h-1 bg-gradient-to-r from-[#29BB89]/10 via-[#3ED9A7]/30 to-[#29BB89]/10 rounded-full my-4" />
 
         {/* 发展节点时间线 */}
-        <section>
+        <section className="-mt-4">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center"
+            className="text-3xl md:text-4xl font-bold text-primary mb-2 text-center"
           >
             公司簡介 — 發展節點
           </motion.h2>
           
           {/* 桌面端横向时间轴 */}
-          <div className="hidden md:block w-full overflow-x-auto py-8">
+          <div className="hidden md:block w-full overflow-x-auto py-2">
             <div className="relative min-w-[1300px] mx-auto px-32" style={{height: '500px'}}>
               {/* 主轴 */}
               <div className="absolute left-20 right-20 top-1/2 transform -translate-y-1/2 h-1 bg-gradient-to-r from-[#29BB89] via-[#3ED9A7] to-[#29BB89] rounded-full" />
@@ -338,7 +338,7 @@ export default function CompanyPage() {
         </section>
 
         {/* 分割线 */}
-        <div className="w-full h-1 bg-gradient-to-r from-[#29BB89]/10 via-[#3ED9A7]/30 to-[#29BB89]/10 rounded-full my-8" />
+        <div className="w-full h-1 bg-gradient-to-r from-[#29BB89]/10 via-[#3ED9A7]/30 to-[#29BB89]/10 rounded-full my-4" />
 
         {/* 名字的由来 */}
         <section className="bg-white/90 rounded-3xl shadow-xl px-8 py-12 md:py-16 relative overflow-hidden">
@@ -430,7 +430,7 @@ export default function CompanyPage() {
               我們相信，藝術不僅是技藝的展現，更是人與人、過去與未來對話的橋樑。
             </motion.p>
             
-            <motion.p 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
@@ -444,12 +444,14 @@ export default function CompanyPage() {
                 </svg>
                 <div className="w-12 h-[1px] bg-gradient-to-l from-transparent to-[#3ED9A7]/30"></div>
               </div>
-              <span className="block pt-6">
-                從雙人舞臺上的青白交纏，到今日匯聚多元藝術工作者的平臺，我們始終銘記：
-                唯有包容差異、堅守初心，方能讓文化傳承生生不息。
-                誠邀各界夥伴攜手，共築屬於這時代的<span className="text-primary font-bold">「青白之美」</span>。
-              </span>
-            </motion.p>
+              <p className="relative">
+                <span className="block pt-6">
+                  從雙人舞臺上的青白交纏，到今日匯聚多元藝術工作者的平臺，我們始終銘記：
+                  唯有包容差異、堅守初心，方能讓文化傳承生生不息。
+                  誠邀各界夥伴攜手，共築屬於這時代的<span className="text-primary font-bold">「青白之美」</span>。
+                </span>
+              </p>
+            </motion.div>
           </div>
           
           {/* 底部装饰 */}

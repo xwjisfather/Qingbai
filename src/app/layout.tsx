@@ -21,6 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-HK">
+      {/* 无需手动设置 favicon，浏览器会自动识别 public/favicon.ico */}
       <body className={`${notoSansTC.variable} font-sans`}>
         <Navbar />
         <main className="min-h-screen">
