@@ -159,6 +159,7 @@ export default function CoursesList() {
                   </ul>
 
                   {/* 了解更多按钮 */}
+                  {/**
                   <Link 
                     href={`/courses/${course.id}`}
                     className="mt-6 inline-flex items-center text-primary hover:text-primary-dark transition-colors"
@@ -169,6 +170,7 @@ export default function CoursesList() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
                     </svg>
                   </Link>
+                  */}
 
                   {/* 装饰边框 */}
                   <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
