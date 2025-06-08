@@ -35,29 +35,6 @@ const futureVisions = [
   }
 ]
 
-const humanCare = [
-  {
-    icon: '📷',
-    title: '致力原創',
-    description: '青白致力於製作音樂、戲劇、舞蹈等原創作品，以藝術巧思傳達生活感悟、文化視野、哲學思考等主題，並致力於培養推廣新一代傑出創作者，將藝術創作的樂趣及審美帶給大眾'
-  },
-  {
-    icon: '🏠',
-    title: '立足社區',
-    description: '青白始終以「服務社會、回饋社區」為運營宗旨，通過「扎根社區服務」「賦能本地機構」「創辦度實踐社會責任」三維度踐行社會責任。例如，持續組織民生關懷項目，以多元文藝活動為載體打造跨領域展演、工作坊及公共文化空間；創建全港包容性最強的藝術平臺，整合「傳授-創作-展演-傳播」全鏈條資源，促進愛好者深度交流與跨界成長，驅動社會文化資本的可持續增值。'
-  },
-  {
-    icon: '📦',
-    title: '商業共生',
-    description: '以創新途徑促進文化藝術活動商業化，促進文藝領域人才長遠發展，同時為香港文化與創意產業發展注入新鮮活力，提升香港軟實力'
-  },
-  {
-    icon: '💬',
-    title: '藝術賦能',
-    description: '立足職場人文關懷，通過藝術療癒、非道工坊、節氣文化沙龍及美學團建，系統提升員工藝術感知力與心理韌性，助力企業在培育複合型人才的同時，打造兼具健康活力與文化厚度的組織生態，實現員工成長與企業發展的雙向賦能'
-  }
-]
-
 export default function FuturePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-[#e6faf4] relative overflow-hidden">
@@ -149,7 +126,7 @@ export default function FuturePage() {
                       <div className={`w-16 h-1 rounded-full bg-gradient-to-r ${vision.color} mx-auto mb-2`} />
                       {/* 描述重点词高亮 */}
                       <p className="text-gray-600 leading-relaxed text-base text-center px-2" style={{letterSpacing:'0.01em',lineHeight:'1.8'}}>
-                        {desc.split('，').map((part, i, arr) => (
+                        {desc.split('，').map((part, i) => (
                           <span key={i} dangerouslySetInnerHTML={{__html: part}} />
                         ))}
                       </p>
@@ -161,36 +138,6 @@ export default function FuturePage() {
               })}
             </div>
           </div>
-          
-          {/* 人文关怀板块 - 已注释 */}
-          {/* 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="mb-16"
-          >
-            <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">人文關懷</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {humanCare.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.6 + index * 0.1 }}
-                  className="bg-gradient-to-br from-[#e6faf4] to-[#f0fdf9] rounded-2xl p-8 relative overflow-hidden group"
-                >
-                  <div className="absolute top-4 right-4 w-16 h-16 bg-white/50 rounded-xl flex items-center justify-center text-2xl shadow-sm">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-[#29BB89] mb-3">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed pr-20">{item.description}</p>
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#29BB89] to-[#3ED9A7] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-          */}
           
           {/* 文艺发展板块 */}
           <motion.div
