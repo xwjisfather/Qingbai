@@ -1,7 +1,7 @@
 // src/components/home/CoursesList.tsx
 'use client'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+// import Link from 'next/link'
 
 const courses = [
   {
